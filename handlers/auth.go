@@ -50,7 +50,7 @@ func Register(c *gin.Context) {
 		return
 	}
 
-	user.Password = "" // Hide password in response
+	user.Password = ""
 	c.JSON(http.StatusCreated, user)
 }
 

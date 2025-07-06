@@ -29,12 +29,10 @@ func ConnectDB() {
 		log.Fatal("Error connecting to MongoDB: ", err)
 	}
 
-	// Ping to make sure connection works
 	err = client.Ping(ctx, nil)
 	if err != nil {
 		log.Fatal("Could not ping MongoDB: ", err)
 	}
-
-	DB = client.Database(dbName) // you can change "testdb" to whatever you like
+	DB = client.Database(dbName)
 	log.Println("Connected to MongoDB!")
 }
